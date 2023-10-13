@@ -2,7 +2,7 @@
 import Link from "next/link";
 import React from "react";
 
-const Log = () => {
+const Login = () => {
   return (
     <>
       {/* card with all the contents */}
@@ -53,4 +53,4 @@ const Log = () => {
   );
 };
 
-export default Log;
+export default Login;
