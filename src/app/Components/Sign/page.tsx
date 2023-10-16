@@ -8,7 +8,7 @@ const Sign = () => {
   const { status, data: session } = useSession();
 
   return (
-    <>
+    <main className="main-background">
       {/* card with all the contents */}
       <main className="main-container" id="sign">
         {/* logo and title */}
@@ -63,7 +63,7 @@ const Sign = () => {
       {/* main tag containing the bg image which is blurred to create the ambent effect */}
 
       <main className="main-ambient"></main>
-    </>
+    </main>
   );
 };
 

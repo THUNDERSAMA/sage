@@ -1,5 +1,7 @@
 import NextAuthProvider from "./Provider";
 import "./globals.css";
+import "./css/header.css";
+import "./css/auth.css";
 import type { Metadata } from "next";
 // import { Poppins } from "next/font/google";
 

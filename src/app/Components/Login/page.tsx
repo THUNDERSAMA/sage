@@ -4,7 +4,7 @@ import React from "react";
 
 const Login = () => {
   return (
-    <>
+    <main className="main-background">
       {/* card with all the contents */}
       <main className="main-container" id="log">
         {/* logo and title */}
@@ -49,7 +49,7 @@ const Login = () => {
       </main>
       {/* main tag containing the bg image which is blurred to create the ambent effect */}
       <main className="main-ambient"></main>
-    </>
+    </main>
   );
 };
 

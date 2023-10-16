@@ -5,7 +5,7 @@ import React, { useState } from "react";
 const Pass = () => {
   const [otpCheck, setOtpCheck] = useState(true);
   return (
-    <>
+    <main className="main-background">
       {/* card with all the contents */}
       <main className="main-container" id="pass">
         {/* logo and title */}
@@ -61,7 +61,7 @@ const Pass = () => {
       </main>
       {/* main tag containing the bg image which is blurred to create the ambent effect */}
       <main className="main-ambient"></main>
-    </>
+    </main>
   );
 };
 
