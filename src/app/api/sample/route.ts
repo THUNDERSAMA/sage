@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import mysql from "mysql2/promise"
 export async function POST(request: any) {
   try {
-    // const {data} = await request.json();
+   // const {data} = await request.json();
    
     const connection = await mysql.createConnection({
         host: 'localhost',

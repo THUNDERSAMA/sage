@@ -1,19 +1,21 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import React from "react";
 import { signIn } from "next-auth/react";
 import { useSession } from "next-auth/react";
 import { Alert } from "@mui/material";
+
 const Sign = () => {
   const { status, data: session } = useSession();
 
   return (
-    <>
+    <main className="main-background">
       {/* card with all the contents */}
       <main className="main-container" id="sign">
         {/* logo and title */}
         <div className="main-text">
-          <img src="/sage.svg" alt="" />
+          {/* <img src="/sage.svg" alt="" /> */}
           <span>Project Sage</span>
         </div>
         {/* every i/o fields and buttons */}
@@ -38,7 +40,13 @@ const Sign = () => {
           <span className="btn-container">
             <button className="sb-btn">Sign Up</button>
             <button className="GFI-btn" onClick={() => signIn("google")}>
-              <img className="btn-png" src="/google.png" alt="" />
+              <Image
+                className="btn-png"
+                src="/google.png"
+                alt=""
+                width={20}
+                height={20}
+              />
             </button>
           </span>
           <div className="alt-container">
@@ -62,8 +70,8 @@ const Sign = () => {
       </main>
       {/* main tag containing the bg image which is blurred to create the ambent effect */}
 
-      <main className="main-ambient"></main>
-    </>
+      <main className="main-ambient" />
+    </main>
   );
 };
 

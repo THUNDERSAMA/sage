@@ -1,15 +1,16 @@
 "use client";
 import Link from "next/link";
 import React from "react";
+import Image from "next/image";
 
 const Login = () => {
   return (
-    <>
+    <main className="main-background">
       {/* card with all the contents */}
       <main className="main-container" id="log">
         {/* logo and title */}
         <div className="main-text">
-          <img src="/sage.svg" alt="" />
+          {/* <img src="/sage.svg" alt="" /> */}
           <span>Project Sage</span>
         </div>
         {/* every i/o fields and buttons */}
@@ -36,7 +37,13 @@ const Login = () => {
           <span className="btn-container">
             <button className="sb-btn">Login</button>
             <button className="GFI-btn">
-              <img className="btn-png" src="/google.png" alt="" />
+              <Image
+                className="btn-png"
+                src="/google.png"
+                alt=""
+                width={20}
+                height={20}
+              />
             </button>
           </span>
           <div className="alt-container">
@@ -48,8 +55,8 @@ const Login = () => {
         </div>
       </main>
       {/* main tag containing the bg image which is blurred to create the ambent effect */}
-      <main className="main-ambient"></main>
-    </>
+      <main className="main-ambient" />
+    </main>
   );
 };
 
