@@ -6,14 +6,17 @@ import { signIn } from "next-auth/react";
 import { useSession } from "next-auth/react";
 import { Alert } from "@mui/material";
 import { redirect } from "next/navigation";
-const Sign = () => {
-  const { status, data: session } = useSession();
-  useEffect(() => {
-    if (status === "authenticated") {
-      redirect("/Store");
-    }
-  }, [status]);
+import { useRouter } from "next/navigation";
 
+const Sign = () => {
+  const router = useRouter();
+  const { status, data: session } = useSession();
+  // useEffect(() => {
+
+  // }, [status, router]);
+  if (status === "authenticated") {
+    router.push("/Store");
+  }
   return (
     <main className="main-background">
       {/* card with all the contents */}

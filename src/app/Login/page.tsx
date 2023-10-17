@@ -1,17 +1,23 @@
 "use client";
 import Link from "next/link";
 import React, { useEffect } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { signIn, useSession } from "next-auth/react";
 import { redirect } from "next/navigation";
 
 const Login = () => {
-  const { status, data: session } = useSession();
-  useEffect(() => {
-    if (status === "authenticated") {
-      redirect("/Store");
-    }
-  }, [status]);
+  const { status } = useSession();
+  const router = useRouter();
+
+  // useEffect(() => {
+  //   if (status === "authenticated") {
+  //     //  router.push("/Store");
+  //   }
+  // }, [status]);
+  if (status === "authenticated") {
+    router.push("/Store");
+  }
   return (
     <main className="main-background">
       {/* card with all the contents */}
