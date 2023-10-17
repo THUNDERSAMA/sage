@@ -15,15 +15,15 @@ const authOptions ={
             try {
    
                 const connection = await mysql.createConnection({
-                    host: 'localhost',
-                    user: 'root',
-                    password:'',
+                    host: 'sql12.freemysqlhosting.net',
+                    user: 'sql12654081',
+                    password:'eAD7GlKj5H',
                     port: 3306,
-                    database: 'sage'
+                    database: 'sql12654081'
                   });
                   let ar;
                 
-                  const [rows, fields] = await connection.execute('SELECT * FROM `user` WHERE STATUS=0 AND EMAIL = '+btoa(email));
+                  const [rows, fields] = await connection.execute('SELECT * FROM `user` WHERE STATUS=0 AND EMAIL = ?',[btoa(email)]);
     
               if (!rows) {
                 const res = await fetch("http://localhost:3000/api/user", {
@@ -47,7 +47,7 @@ const authOptions ={
           }
     
           return user;
-          
+
         },
     },
 };

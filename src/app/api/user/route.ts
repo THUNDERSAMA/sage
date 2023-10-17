@@ -6,14 +6,14 @@ export async function POST(request:any) {
     const { name, email } = await request.json();
    
     const connection = await mysql.createConnection({
-        host: 'localhost',
-        user: 'root',
-        password:'',
-        port: 3306,
-        database: 'sage'
+      host: 'sql12.freemysqlhosting.net',
+      user: 'sql12654081',
+      password:'eAD7GlKj5H',
+      port: 3306,
+      database: 'sql12654081'
       });
       let ar;
-      const [rows, fields] = await connection.execute('INSERT INTO `user` (NAME,TYPE,EMAIL) VALUES('+name+',GOOGLE'+atob(email)+')');
+      const [rows, fields] = await connection.execute('INSERT INTO `user` (NAME, TYPE, EMAIL) VALUES ("' + name + '", "GOOGLE", "' + atob(email) + '")');
 
     const mergedResults = {
       status: 'success',
