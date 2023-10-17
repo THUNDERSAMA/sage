@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import Sign from "./Components/Sign/page";
 import Header from "./Components/Header";
 import dynamic from "next/dist/shared/lib/dynamic";
 

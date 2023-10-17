@@ -39,34 +39,34 @@ const Header = () => {
           <>
             <span className="headerTitle">Project Sage</span>
             <span className="headerOptions">
-              <Link href="/Components/Store">Store</Link>
-              <Link href="/Components/Community">Online</Link>
-              <Link href="/Components/Blogs">Blogs</Link>
-              <Link href="/Components/Evalue">Tests</Link>
-              <Link href="/Components/Libr">Library</Link>
+              <Link href="/Store">Store</Link>
+              <Link href="/Community">Online</Link>
+              <Link href="/Blogs">Blogs</Link>
+              <Link href="/Evalue">Tests</Link>
+              <Link href="/Libr">Library</Link>
             </span>
           </>
         ) : (
           <>
             <span className="headerTitle">Project Sage</span>
             <span className="footerOptions">
-              <Link href="/Components/Store">
+              <Link href="/Store">
                 <StorefrontOutlinedIcon />
                 Store
               </Link>
-              <Link href="/Components/Community">
+              <Link href="/Community">
                 <PeopleOutlinedIcon />
                 Online
               </Link>
-              <Link href="/Components/Blogs">
+              <Link href="/Blogs">
                 <BookOutlinedIcon />
                 Blogs
               </Link>
-              <Link href="/Components/Evalue">
+              <Link href="/Evalue">
                 <EmojiObjectsOutlinedIcon />
                 Tests
               </Link>
-              <Link href="/Components/Libr">
+              <Link href="/Libr">
                 <LocalLibraryOutlinedIcon />
                 Library
               </Link>
