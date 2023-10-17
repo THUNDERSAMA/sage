@@ -10,7 +10,7 @@ const Login = () => {
       <main className="main-container" id="log">
         {/* logo and title */}
         <div className="main-text">
-          <img src="/sage.svg" alt="" />
+          {/* <img src="/sage.svg" alt="" /> */}
           <span>Project Sage</span>
         </div>
         {/* every i/o fields and buttons */}
@@ -55,7 +55,7 @@ const Login = () => {
         </div>
       </main>
       {/* main tag containing the bg image which is blurred to create the ambent effect */}
-      <main className="main-ambient"></main>
+      <main className="main-ambient" />
     </main>
   );
 };
