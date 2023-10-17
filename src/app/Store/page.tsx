@@ -1,12 +1,18 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../Components/Header";
 import { useSession } from "next-auth/react";
-import { useRouter } from "next/router"; // Import useRouter from next/router
+import { useRouter } from "next/navigation"; // Import useRouter from next/router
 
-export default function Page() {
-  const router = useRouter();
+export default function Store() {
   const { status, data: session } = useSession();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (status !== "authenticated") {
+      router.push("/Sign");
+    }
+  }, [status, router]);
 
   if (status === "authenticated") {
     return (
@@ -16,7 +22,6 @@ export default function Page() {
       </>
     );
   } else {
-    router.push("/Sign");
     return null;
   }
 }
