@@ -3,7 +3,7 @@ import React from "react";
 import Header from "./Components/Header";
 import dynamic from "next/dist/shared/lib/dynamic";
 
-const DynamicComponentWithNoSSR = dynamic(() => import("./Components/Header"), {
+const DynamicComponentWithNoSSR = dynamic(() => import("./Sign/page"), {
   ssr: false,
 });
 

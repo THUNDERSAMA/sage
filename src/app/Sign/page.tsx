@@ -1,13 +1,18 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import { signIn } from "next-auth/react";
 import { useSession } from "next-auth/react";
 import { Alert } from "@mui/material";
-
+import { redirect } from "next/navigation";
 const Sign = () => {
   const { status, data: session } = useSession();
+  useEffect(() => {
+    if (status === "authenticated") {
+      redirect("/Store");
+    }
+  }, [status]);
 
   return (
     <main className="main-background">

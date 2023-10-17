@@ -1,9 +1,17 @@
 "use client";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
+import { signIn, useSession } from "next-auth/react";
+import { redirect } from "next/navigation";
 
 const Login = () => {
+  const { status, data: session } = useSession();
+  useEffect(() => {
+    if (status === "authenticated") {
+      redirect("/Store");
+    }
+  }, [status]);
   return (
     <main className="main-background">
       {/* card with all the contents */}
@@ -36,7 +44,7 @@ const Login = () => {
               /> */}
           <span className="btn-container">
             <button className="sb-btn">Login</button>
-            <button className="GFI-btn">
+            <button className="GFI-btn" onClick={() => signIn("google")}>
               <Image
                 className="btn-png"
                 src="/google.png"
