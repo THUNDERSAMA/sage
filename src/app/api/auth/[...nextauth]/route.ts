@@ -23,7 +23,7 @@ const authOptions ={
                   });
                   let ar;
                 
-                  const [rows, fields] = await connection.execute('SELECT * FROM `user` WHERE STATUS=0 AND EMAIL ='+btoa(email));
+                  const [rows, fields] = await connection.execute('SELECT * FROM `user` WHERE STATUS=0 AND EMAIL = '+btoa(email));
     
               if (!rows) {
                 const res = await fetch("http://localhost:3000/api/user", {
