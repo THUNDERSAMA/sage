@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import React from "react";
+import Image from "next/image";
 
 const Login = () => {
   return (
@@ -36,7 +37,13 @@ const Login = () => {
           <span className="btn-container">
             <button className="sb-btn">Login</button>
             <button className="GFI-btn">
-              <img className="btn-png" src="/google.png" alt="" />
+              <Image
+                className="btn-png"
+                src="/google.png"
+                alt=""
+                width={20}
+                height={20}
+              />
             </button>
           </span>
           <div className="alt-container">

@@ -1,9 +1,11 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import React from "react";
 import { signIn } from "next-auth/react";
 import { useSession } from "next-auth/react";
 import { Alert } from "@mui/material";
+
 const Sign = () => {
   const { status, data: session } = useSession();
 
@@ -38,7 +40,13 @@ const Sign = () => {
           <span className="btn-container">
             <button className="sb-btn">Sign Up</button>
             <button className="GFI-btn" onClick={() => signIn("google")}>
-              <img className="btn-png" src="/google.png" alt="" />
+              <Image
+                className="btn-png"
+                src="/google.png"
+                alt=""
+                width={20}
+                height={20}
+              />
             </button>
           </span>
           <div className="alt-container">
