@@ -31,7 +31,7 @@ const Header = () => {
         className="headerContainer"
         style={
           vw <= 750
-            ? { flexDirection: "column", paddingBlock: 10 }
+            ? { flexDirection: "column", height: "4rem", paddingBlock: 10 }
             : { position: "relative" }
         }
       >
