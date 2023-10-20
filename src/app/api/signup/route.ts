@@ -12,7 +12,7 @@ export async function POST(request:any) {
             port: 3306, 
             database: 'sql12654081'
             });
-            const [existingUser] = await connection.execute<RowDataPacket[]>('SELECT * FROM `user` WHERE email = ?', [email])
+            const [existingUser] = await connection.execute<RowDataPacket[]>('SELECT * FROM `user` WHERE EMAIL = ?', [email])
             if(existingUser.length>0){
               return NextResponse.json({
                 status: 'error',
