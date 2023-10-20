@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import mysql from "mysql2/promise"
+import { useSession, getSession } from "next-auth/react";
 export async function POST(request: any) {
   try {
    // const {data} = await request.json();
@@ -14,6 +15,8 @@ export async function POST(request: any) {
       let ar;
       const [rows, fields] = await connection.execute('SELECT * FROM `user` WHERE STATUS=0');
       // console.log(rows);
+   
+
     const mergedResults = {
       status: 'success',
       results: rows,
