@@ -37,6 +37,7 @@ const authOptions ={
               }),
             });
             const user = await res.json();
+            console.log("from signup");
     console.log(user);
             if (user) {
               return user;
