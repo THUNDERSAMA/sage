@@ -28,7 +28,7 @@ export async function POST(request:any) {
             status: 'success',
             results: rows,
           };
-          return NextResponse.json({ message: "User Registered" }, { status: 201 });
+          return NextResponse.json({name:name,email:email }, { status: 201 });
          
         } catch (error) {
           return NextResponse.json({
