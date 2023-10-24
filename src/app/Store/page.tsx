@@ -10,7 +10,7 @@ import { Alert } from "@mui/material";
 
 
 
-export default function Home() {
+export function Home() {
   return (
   <>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
