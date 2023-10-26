@@ -23,7 +23,7 @@ body {
   );
   color: white;
   font-family: "Poppins", sans-serif;
-  overflow: hidden;
+  overflow: scroll;
 }
 
 /* :root {
