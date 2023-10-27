@@ -62,9 +62,9 @@ const Login = () => {
           </span>
           <div className="alt-container">
             <span> or </span>
-            <a href="/Components/Sign">Join us</a>
+            <Link href="/Sign">Join us</Link>
             <span> | </span>
-            <Link href="/Components/Pass">Forgot password?</Link>
+            <Link href="/Pass">Forgot password?</Link>
           </div>
         </div>
       </main>

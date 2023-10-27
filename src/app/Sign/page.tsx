@@ -91,7 +91,7 @@ const Sign = () => {
           </span>
           <div className="alt-container">
             <span> or </span>
-            <Link href="/Components/Login"> Login </Link>
+            <Link href="/Login"> Login </Link>
           </div>
           {status === "authenticated" ? (
             <Alert severity="success">

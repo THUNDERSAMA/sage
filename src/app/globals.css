@@ -7,14 +7,18 @@
 * {
   /* border: 1px solid red; */
   font-family: "Poppins", sans-serif;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
   padding: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   box-sizing: border-box;
   background: linear-gradient(
     to bottom right,
@@ -23,29 +27,11 @@ body {
   );
   color: white;
   font-family: "Poppins", sans-serif;
-  overflow: scroll;
+  overflow: auto;
 }
 
-/* :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+body::-webkit-scrollbar,
+html::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  display: none;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-} */

@@ -54,7 +54,7 @@ const Pass = () => {
           <button className="sb-btn">Reset</button>
           <div className="alt-container">
             <span> or </span>
-            <Link href="/Components/Login">Try login</Link>
+            <Link href="/Login">Try login</Link>
           </div>
           <div></div>
         </div>

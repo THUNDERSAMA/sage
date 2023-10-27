@@ -1,355 +1,172 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../Components/Header";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation"; // Import useRouter from next/router
 import { Alert } from "@mui/material";
+import Image from "next/image";
+import Link from "next/link";
 
 function Home() {
   return (
-    <>
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-      />
-
+    <section className="mainStore">
       <section className="header">
-        <a href="#">
-          Sage <i className="fas fa-book"></i>
-        </a>
-
         <form action="" className="search-form">
-          <input type="search" placeholder="Search any books" id="search-box" />
-          <label htmlFor="search-box" className="fas fa-search"></label>
+          <input type="search" placeholder="Search books" id="search-box" />
         </form>
-
-        <div className="icons">
-          <div id="search-btn" className="fas fa-search"></div>
-          <a href="#" className="fas fa-heart"></a>
-          <a href="#" className="fas fa-shopping-cart"></a>
-          <div id="login-btn" className="fas fa-user"></div>
-        </div>
       </section>
 
       <section className="home" id="home">
-        <div className="row">
-          <div className="content">
-            <h3>(New Arrivals or Recommended or offer)</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
-              blanditiis suscipit voluptates. Cupiditate ipsa eum quod nesciunt
-              animi nam labore earum dolor odit neque similique debitis laborum,
-              rem, velit quibusdam.
-            </p>
-            <button className="btn">shop now</button>
-          </div>
+        <div className="promo">
+          <h3>New Arrivals, Recommendations and Offers!</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
+            blanditiis suscipit voluptates. Cupiditate ipsa eum quod nesciunt
+            animi nam labore earum dolor odit neque similique debitis laborum,
+            rem, velit quibusdam.
+          </p>
+          <button className="shopnowBtn">
+            <Link href="#featured">Shop Now</Link>
+          </button>
+        </div>
 
-          <div className="books-slider">
-            <div className="wraper">
-              <a href="#">
-                <img src="https://picsum.photos/200/300" alt="" />
-              </a>
-              <a href="#">
-                <img src="https://picsum.photos/200/300" alt="" />
-              </a>
-              <a href="#">
-                <img src="https://picsum.photos/200/300" alt="" />
-              </a>
-              <a href="#">
-                <img src="https://picsum.photos/200/300" alt="" />
-              </a>
-              <a href="#">
-                <img src="https://picsum.photos/200/300" alt="" />
-              </a>
-              <a href="#">
-                <img src="https://picsum.photos/200/300" alt="" />
-              </a>
-            </div>
-          </div>
+        <div className="booksSlider">
+          <Link href="/Store/Product">
+            <Image
+              src="https://picsum.photos/seed/picsum/200/300?random=1"
+              alt="img"
+              width={200}
+              height={300}
+            />
+          </Link>
+          <Link href="/Store/Product">
+            <Image
+              src="https://picsum.photos/seed/picsum/200/300?random=1"
+              alt="img"
+              width={200}
+              height={300}
+            />
+          </Link>
+          <Link href="/Store/Product">
+            <Image
+              src="https://picsum.photos/seed/picsum/200/300?random=1"
+              alt="img"
+              width={200}
+              height={300}
+            />
+          </Link>
+          <Link href="/Store/Product">
+            <Image
+              src="https://picsum.photos/seed/picsum/200/300?random=1"
+              alt="img"
+              width={200}
+              height={300}
+            />
+          </Link>
         </div>
       </section>
-
+      <hr />
       <section className="featured" id="featured">
-        <h1 className="heading">
-          <span>featured books</span>
-        </h1>
-        <div className="featured-slider">
-          <div className="box">
-            <div className="icon">
-              <a href="#" className="fas fa-search"></a>
-              <a href="#" className="fas fa-heart"></a>
-              <a href="#" className="fas fa-eye"></a>
+        <p>Featured books</p>
+        <div className="featuredSlider">
+          <Link href="/Store/Product" className="itemBox">
+            <div className="imgBox">
+              <Image
+                src="https://picsum.photos/200/300"
+                alt=""
+                width={200}
+                height={300}
+              />
             </div>
-            <div className="image">
-              <img src="https://picsum.photos/200/300" alt="" />
-            </div>
-            <div className="content">
-              <h3>featured books</h3>
-              <div className="price">
-                Rs150 <span>Rs200</span>
+            <div className="itemDetails">
+              <div className="name">
+                Book about fruits that gives you knowledge about doctors
               </div>
-              <a href="#" className="btn">
-                add to cart
-              </a>
-            </div>
-          </div>
-
-          <div className="box">
-            <div className="icon">
-              <a href="#" className="fas fa-search"></a>
-              <a href="#" className="fas fa-heart"></a>
-              <a href="#" className="fas fa-eye"></a>
-            </div>
-            <div className="image">
-              <img src="https://picsum.photos/200/300" alt="" />
-            </div>
-            <div className="content">
-              <h3>featured books</h3>
-              <div className="price">
-                Rs 150 <span>Rs200</span>
+              <div className="priceWrap">
+                <span className="price">₹ 150</span>
+                <span className="offer">₹ 200</span>
               </div>
-              <a href="#" className="btn">
-                add to cart
-              </a>
             </div>
-          </div>
-
-          <div className="box">
-            <div className="icon">
-              <a href="#" className="fas fa-search"></a>
-              <a href="#" className="fas fa-heart"></a>
-              <a href="#" className="fas fa-eye"></a>
+          </Link>
+          <Link href="/Store/Product" className="itemBox">
+            <div className="imgBox">
+              <Image
+                src="https://picsum.photos/200/300"
+                alt=""
+                width={200}
+                height={300}
+              />
             </div>
-            <div className="image">
-              <img src="https://picsum.photos/200/300" alt="" />
-            </div>
-            <div className="content">
-              <h3>featured books</h3>
-              <div className="price">
-                Rs150 <span>Rs200</span>
+            <div className="itemDetails">
+              <div className="name">
+                Book about fruits that gives you knowledge about doctors
               </div>
-              <a href="#" className="btn">
-                add to cart
-              </a>
-            </div>
-          </div>
-
-          <div className="box">
-            <div className="icon">
-              <a href="#" className="fas fa-search"></a>
-              <a href="#" className="fas fa-heart"></a>
-              <a href="#" className="fas fa-eye"></a>
-            </div>
-            <div className="image">
-              <img src="https://picsum.photos/200/300" alt="" />
-            </div>
-            <div className="content">
-              <h3>featured books</h3>
-              <div className="price">
-                Rs 150 <span>Rs200</span>
+              <div className="priceWrap">
+                <span className="price">₹ 150</span>
+                <span className="offer">₹ 200</span>
               </div>
-              <a href="#" className="btn">
-                add to cart
-              </a>
             </div>
-          </div>
-
-          <div className="box">
-            <div className="icon">
-              <a href="#" className="fas fa-search"></a>
-              <a href="#" className="fas fa-heart"></a>
-              <a href="#" className="fas fa-eye"></a>
+          </Link>
+          <Link href="/Store/Product" className="itemBox">
+            <div className="imgBox">
+              <Image
+                src="https://picsum.photos/200/300"
+                alt=""
+                width={200}
+                height={300}
+              />
             </div>
-            <div className="image">
-              <img src="https://picsum.photos/200/300" alt="" />
-            </div>
-            <div className="content">
-              <h3>featured books</h3>
-              <div className="price">
-                Rs 150 <span>Rs200</span>
+            <div className="itemDetails">
+              <div className="name">
+                Book about fruits that gives you knowledge about doctors
               </div>
-              <a href="#" className="btn">
-                add to cart
-              </a>
-            </div>
-          </div>
-
-          <div className="box">
-            <div className="icon">
-              <a href="#" className="fas fa-search"></a>
-              <a href="#" className="fas fa-heart"></a>
-              <a href="#" className="fas fa-eye"></a>
-            </div>
-            <div className="image">
-              <img src="https://picsum.photos/200/300" alt="" />
-            </div>
-            <div className="content">
-              <h3>featured books</h3>
-              <div className="price">
-                Rs 150 <span>Rs200</span>
+              <div className="priceWrap">
+                <span className="price">₹ 150</span>
+                <span className="offer">₹ 200</span>
               </div>
-              <a href="#" className="btn">
-                add to cart
-              </a>
             </div>
-          </div>
-
-          <div className="box">
-            <div className="icon">
-              <a href="#" className="fas fa-search"></a>
-              <a href="#" className="fas fa-heart"></a>
-              <a href="#" className="fas fa-eye"></a>
+          </Link>
+          <Link href="/Store/Product" className="itemBox">
+            <div className="imgBox">
+              <Image
+                src="https://picsum.photos/200/300"
+                alt=""
+                width={200}
+                height={300}
+              />
             </div>
-            <div className="image">
-              <img src="https://picsum.photos/200/300" alt="" />
-            </div>
-            <div className="content">
-              <h3>featured books</h3>
-              <div className="price">
-                Rs 150 <span>Rs200</span>
+            <div className="itemDetails">
+              <div className="name">
+                Book about fruits that gives you knowledge about doctors
               </div>
-              <a href="#" className="btn">
-                add to cart
-              </a>
-            </div>
-          </div>
-
-          <div className="box">
-            <div className="icon">
-              <a href="#" className="fas fa-search"></a>
-              <a href="#" className="fas fa-heart"></a>
-              <a href="#" className="fas fa-eye"></a>
-            </div>
-            <div className="image">
-              <img src="https://picsum.photos/200/300" alt="" />
-            </div>
-            <div className="content">
-              <h3>featured books</h3>
-              <div className="price">
-                Rs 150 <span>Rs200</span>
+              <div className="priceWrap">
+                <span className="price">₹ 150</span>
+                <span className="offer">₹ 200</span>
               </div>
-              <a href="#" className="btn">
-                add to cart
-              </a>
             </div>
-          </div>
-
-          <div className="box">
-            <div className="icon">
-              <a href="#" className="fas fa-search"></a>
-              <a href="#" className="fas fa-heart"></a>
-              <a href="#" className="fas fa-eye"></a>
-            </div>
-            <div className="image">
-              <img src="https://picsum.photos/200/300" alt="" />
-            </div>
-            <div className="content">
-              <h3>featured books</h3>
-              <div className="price">
-                Rs 150 <span>Rs200</span>
-              </div>
-              <a href="#" className="btn">
-                add to cart
-              </a>
-            </div>
-          </div>
-
-          <div className="box">
-            <div className="icon">
-              <a href="#" className="fas fa-search"></a>
-              <a href="#" className="fas fa-heart"></a>
-              <a href="#" className="fas fa-eye"></a>
-            </div>
-            <div className="image">
-              <img src="https://picsum.photos/200/300" alt="" />
-            </div>
-            <div className="content">
-              <h3>featured books</h3>
-              <div className="price">
-                Rs 150 <span>Rs200</span>
-              </div>
-              <a href="#" className="btn">
-                add to cart
-              </a>
-            </div>
-          </div>
-
-          <div className="box">
-            <div className="icon">
-              <a href="#" className="fas fa-search"></a>
-              <a href="#" className="fas fa-heart"></a>
-              <a href="#" className="fas fa-eye"></a>
-            </div>
-            <div className="image">
-              <img src="https://picsum.photos/200/300" alt="" />
-            </div>
-            <div className="content">
-              <h3>featured books</h3>
-              <div className="price">
-                Rs 150 <span>Rs200</span>
-              </div>
-              <a href="#" className="btn">
-                add to cart
-              </a>
-            </div>
-          </div>
-
-          <div className="box">
-            <div className="icon">
-              <a href="#" className="fas fa-search"></a>
-              <a href="#" className="fas fa-heart"></a>
-              <a href="#" className="fas fa-eye"></a>
-            </div>
-            <div className="image">
-              <img src="https://picsum.photos/200/300" alt="" />
-            </div>
-            <div className="content">
-              <h3>featured books</h3>
-              <div className="price">
-                Rs 150 <span>Rs200</span>
-              </div>
-              <a href="#" className="btn">
-                add to cart
-              </a>
-            </div>
-          </div>
+          </Link>
         </div>
       </section>
-
-      <section className="icons-container">
-        <div className="icons">
-          <i className="fas fa-plane"></i>
-          <div className="content">
-            <h3>Free Shipping</h3>
-            <p>order over Rs100</p>
-          </div>
+      <hr />
+      <section className="storeDetails">
+        <div className="content">
+          <p>Free Shipping</p>
+          <p>order over Rs100</p>
         </div>
-
-        <div className="icons">
-          <i className="fas fa-lock"></i>
-          <div className="content">
-            <h3>Secure payment</h3>
-            <p>100 secure payments</p>
-          </div>
+        <div className="content">
+          <p>Secure</p>
+          <p>100 secure payments</p>
         </div>
-
-        <div className="icons">
-          <i className="fas fa-redo-alt"></i>
-          <div className="content">
-            <h3>easy returns</h3>
-            <p>10 days returns</p>
-          </div>
+        <div className="content">
+          <p>Easy Returns</p>
+          <p>10 days returns</p>
         </div>
-
-        <div className="icons">
-          <i className="fas fa-headset"></i>
-          <div className="content">
-            <h3>24/7 support</h3>
-            <p>call us anytime</p>
-          </div>
+        <div className="content">
+          <p>24/7 Support</p>
+          <p>call us anytime</p>
         </div>
       </section>
-    </>
+    </section>
   );
 }
 
