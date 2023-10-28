@@ -20,12 +20,13 @@
   justify-content: center;
 }
 .mainStore > .header > .search-form input {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.7);
   padding: 10px;
   width: 77vw;
   padding-inline: 20px;
   border-radius: 25px;
-  border: 1px solid rgba(0, 0, 0, 0.8);
+  border: 0;
+  /* border: 1px solid rgba(0, 0, 0, 0.8); */
 }
 
 .mainStore > .home > .promo {
