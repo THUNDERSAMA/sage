@@ -95,7 +95,7 @@ const authOptions ={
 
         },
     },
-    callbackUrl: "/Store",
+    callbackUrl: "/Sign",
 };
 const handler =NextAuth(authOptions);
 export {handler as GET, handler as POST}

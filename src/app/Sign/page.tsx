@@ -14,11 +14,15 @@ const Sign = () => {
   // useEffect(() => {
   console.log(session);
   // }, [status, router]);
-  update({ status: "authenticated" });
-  console.log(session);
-  if (status === "authenticated") {
-    router.push("/Store");
-  }
+  // update({ status: "authenticated" });
+  // console.log(session);
+
+  useEffect(() => {
+    if (status === "authenticated") {
+      console.log("sign in");
+      router.push("/Store");
+    }
+  }, [status, router]);
   const userName = useRef("");
   const pass = useRef("");
   const email = useRef("");

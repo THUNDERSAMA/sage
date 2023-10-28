@@ -176,6 +176,7 @@ export default function Store() {
 
   useEffect(() => {
     if (status !== "authenticated") {
+      console.log("store");
       router.push("/Sign");
     }
   }, [status, router]);
