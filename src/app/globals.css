@@ -11,13 +11,14 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth !important;
 }
 
 body {
   margin: 0;
   padding: 0;
   width: 100vw;
+  min-height: 100vh;
   height: 100%;
   box-sizing: border-box;
   background: linear-gradient(
@@ -27,11 +28,12 @@ body {
   );
   color: white;
   font-family: "Poppins", sans-serif;
-  overflow: auto;
 }
 
-body::-webkit-scrollbar,
-html::-webkit-scrollbar,
-*::-webkit-scrollbar {
+body::-webkit-scrollbar {
   display: none;
+}
+
+p {
+  cursor: default;
 }

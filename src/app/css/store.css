@@ -24,7 +24,7 @@
   padding: 10px;
   width: 77vw;
   padding-inline: 20px;
-  border-radius: 25px;
+  border-radius: 15px;
   border: 0;
   /* border: 1px solid rgba(0, 0, 0, 0.8); */
 }
@@ -50,79 +50,126 @@
   text-decoration: none;
 }
 
-.mainStore > .home > .booksSlider {
+/* .mainStore > .home > .booksSlider {
   margin-block: 40px;
   display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
   position: relative;
-  gap: 25px;
-  width: 100%;
+  gap: 30px;
+  height: calc(300px);
+  width: 80vw;
+  background-color: rgb(0 0 0 /0.2);
+  border-radius: 45px;
+  padding: 35px 0;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+}
+.booksSlider::-webkit-scrollbar {
+  display: none;
 }
 .booksSlider a {
+  min-width: 200px;
+  height: 300px;
   border-radius: 25px;
   transition: all 0.2s ease-in;
   overflow: hidden;
+}
+.booksSlider a:first-child {
+  margin-left: 30px;
+}
+.booksSlider a:last-child {
+  margin-right: 30px;
 }
 .booksSlider img {
   margin-bottom: -10px;
 }
 .booksSlider a:hover img {
-  transform: scale(1.1);
-}
+  scale: 1.1;
+} */
 
-.featured {
+.bookSection {
+  position: relative;
   margin-block: 40px;
 }
 
-.featured p {
+.bookSection p {
   width: 20rem;
   margin: auto;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   position: relative;
   font-size: 2rem;
   font-weight: 500;
   color: black;
-  /* background: #fff; */
 }
-/* .featured p::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  width: 100%;
-  height: 0.01rem;
-  background: rgb(0, 0, 0, 0.1);
-  z-index: -1;
-} */
-.featuredSlider {
+.bookSectionSlider {
+  position: relative;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  gap: 50px;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  gap: 30px;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  background-color: rgb(0 0 0 /0.1);
+  border-radius: 45px;
+  padding: 30px;
 }
-.featuredSlider .itemBox {
-  width: 200px;
+.bookSectionSlider::-webkit-scrollbar {
+  display: none;
+}
+.bookSection button {
+  position: absolute;
+  top: 59%;
+  transform: translateY(-50%);
+  z-index: 1;
+  border-radius: 50%;
+  border: 0;
+  font-size: 24px;
+  width: 50px;
+  cursor: pointer;
+  aspect-ratio: 1/1;
+  display: grid;
+  place-items: center;
+}
+.scLeft {
+  left: 3vw;
+}
+.scRight {
+  right: 3vw;
+}
+.bookSectionSlider a:first-child {
+  margin-left: calc(7vw);
+}
+.bookSectionSlider a:last-child {
+  margin-right: calc(7vw);
+}
+.bookSectionSlider .itemBox {
+  min-width: 200px;
   height: 100%;
   position: relative;
   text-align: center;
   border-radius: 25px;
   overflow: hidden;
   text-decoration: none;
-  background-color: rgb(0 0 0 /0.2);
+  background-color: rgb(0 0 0 /0.7);
+  border: 3px solid rgb(0 0 0 /0.1);
 }
-.featuredSlider .imgBox {
+.bookSectionSlider .imgBox {
   width: 200px;
   height: 300px;
   overflow: hidden;
 }
-.featuredSlider .itemBox:hover img {
+.bookSectionSlider .itemBox:hover img {
   scale: 1.1;
 }
-.featuredSlider .itemBox .itemDetails {
+.bookSectionSlider .itemBox .itemDetails {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -130,7 +177,7 @@
   gap: 7px;
   padding: 15px;
 }
-.featuredSlider .itemBox .itemDetails .name {
+.bookSectionSlider .itemBox .itemDetails .name {
   text-align: left;
   text-overflow: ellipsis;
   font-size: 16px;
@@ -138,11 +185,15 @@
   /* white-space: nowrap; */
   /* overflow: hidden; */
   line-height: 18px;
-  font-weight: 400;
+  font-weight: 500;
   margin: 0;
-  color: #000;
+  color: #fff;
 }
-.featuredSlider .itemBox .itemDetails .price {
+.bookSectionSlider .itemBox .itemDetails .desc {
+  color: #ddd;
+  font-size: 14px;
+}
+/* .bookSectionSlider .itemBox .itemDetails .price {
   font-size: 18px;
   font-weight: 600;
   color: #000;
@@ -151,11 +202,11 @@
   padding-inline: 5px;
   margin-inline-end: 7px;
 }
-.featuredSlider .itemBox .itemDetails .offer {
+.bookSectionSlider .itemBox .itemDetails .offer {
   font-size: 12px;
   color: rgba(255, 0, 0, 0.6);
   text-decoration: line-through;
-}
+} */
 
 .storeDetails {
   display: flex;

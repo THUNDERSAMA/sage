@@ -1,13 +1,31 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Header from "../Components/Header";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation"; // Import useRouter from next/router
 import { Alert } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
+import KeyboardArrowRightRoundedIcon from "@mui/icons-material/KeyboardArrowRightRounded";
+import KeyboardArrowLeftRoundedIcon from "@mui/icons-material/KeyboardArrowLeftRounded";
 
 function Home() {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
+  const scrollToRight = () => {
+    if (containerRef.current) {
+      const currentScrollLeft = containerRef.current.scrollLeft;
+      containerRef.current.scrollTo(currentScrollLeft + 250, 0);
+    }
+  };
+
+  const scrollToLeft = () => {
+    if (containerRef.current) {
+      const currentScrollLeft = containerRef.current.scrollLeft;
+      containerRef.current.scrollTo(currentScrollLeft - 250, 0);
+    }
+  };
+
   return (
     <section className="mainStore">
       <section className="header">
@@ -26,144 +44,103 @@ function Home() {
             rem, velit quibusdam.
           </p>
           <button className="shopnowBtn">
-            <Link href="#featured">Shop Now</Link>
+            <Link href="#arrivalSection">Shop Now</Link>
           </button>
         </div>
-
-        <div className="booksSlider">
-          <Link href="/Store/Product">
-            <Image
-              src="https://picsum.photos/seed/picsum/200/300?random=1"
-              alt="img"
-              width={200}
-              height={300}
-            />
-          </Link>
-          <Link href="/Store/Product">
-            <Image
-              src="https://picsum.photos/seed/picsum/200/300?random=1"
-              alt="img"
-              width={200}
-              height={300}
-            />
-          </Link>
-          <Link href="/Store/Product">
-            <Image
-              src="https://picsum.photos/seed/picsum/200/300?random=1"
-              alt="img"
-              width={200}
-              height={300}
-            />
-          </Link>
-          <Link href="/Store/Product">
-            <Image
-              src="https://picsum.photos/seed/picsum/200/300?random=1"
-              alt="img"
-              width={200}
-              height={300}
-            />
-          </Link>
-        </div>
       </section>
-      <hr />
-      <section className="featured" id="featured">
-        <p>Featured books</p>
-        <div className="featuredSlider">
+      <section className="bookSection" id="arrivalSection">
+        <button className="scLeft" onClick={scrollToLeft}>
+          <KeyboardArrowLeftRoundedIcon />
+        </button>
+        <p>New Arrivals!</p>
+        <button className="scRight" onClick={scrollToRight}>
+          <KeyboardArrowRightRoundedIcon />
+        </button>
+        <div className="bookSectionSlider" ref={containerRef}>
           <Link href="/Store/Product" className="itemBox">
             <div className="imgBox">
               <Image
-                src="https://picsum.photos/200/300"
+                src="https://picsum.photos/800/1200.webp?space"
                 alt=""
                 width={200}
                 height={300}
               />
             </div>
             <div className="itemDetails">
-              <div className="name">
-                Book about fruits that gives you knowledge about doctors
-              </div>
-              <div className="priceWrap">
-                <span className="price">₹ 150</span>
-                <span className="offer">₹ 200</span>
-              </div>
+              <div className="name">Book about fruits</div>
+              <div className="desc">Parthib DS</div>
             </div>
           </Link>
           <Link href="/Store/Product" className="itemBox">
             <div className="imgBox">
               <Image
-                src="https://picsum.photos/200/300"
+                src="https://picsum.photos/800/1200.webp?earth"
                 alt=""
                 width={200}
                 height={300}
               />
             </div>
             <div className="itemDetails">
-              <div className="name">
-                Book about fruits that gives you knowledge about doctors
-              </div>
-              <div className="priceWrap">
-                <span className="price">₹ 150</span>
-                <span className="offer">₹ 200</span>
-              </div>
+              <div className="name">Book about fruits</div>
+              <div className="desc">Parthib DS</div>
             </div>
           </Link>
           <Link href="/Store/Product" className="itemBox">
             <div className="imgBox">
               <Image
-                src="https://picsum.photos/200/300"
+                src="https://picsum.photos/800/1200.webp?technology"
                 alt=""
                 width={200}
                 height={300}
               />
             </div>
             <div className="itemDetails">
-              <div className="name">
-                Book about fruits that gives you knowledge about doctors
-              </div>
-              <div className="priceWrap">
-                <span className="price">₹ 150</span>
-                <span className="offer">₹ 200</span>
-              </div>
+              <div className="name">Book about fruits</div>
+              <div className="desc">Parthib DS</div>
             </div>
           </Link>
           <Link href="/Store/Product" className="itemBox">
             <div className="imgBox">
               <Image
-                src="https://picsum.photos/200/300"
+                src="https://picsum.photos/800/1200.webp?people"
                 alt=""
                 width={200}
                 height={300}
               />
             </div>
             <div className="itemDetails">
-              <div className="name">
-                Book about fruits that gives you knowledge about doctors
-              </div>
-              <div className="priceWrap">
-                <span className="price">₹ 150</span>
-                <span className="offer">₹ 200</span>
-              </div>
+              <div className="name">Book about fruits</div>
+              <div className="desc">Parthib DS</div>
             </div>
           </Link>
-        </div>
-      </section>
-      <hr />
-      <section className="storeDetails">
-        <div className="content">
-          <p>Free Shipping</p>
-          <p>order over Rs100</p>
-        </div>
-        <div className="content">
-          <p>Secure</p>
-          <p>100 secure payments</p>
-        </div>
-        <div className="content">
-          <p>Easy Returns</p>
-          <p>10 days returns</p>
-        </div>
-        <div className="content">
-          <p>24/7 Support</p>
-          <p>call us anytime</p>
+          <Link href="/Store/Product" className="itemBox">
+            <div className="imgBox">
+              <Image
+                src="https://picsum.photos/800/1200.webp?animals"
+                alt=""
+                width={200}
+                height={300}
+              />
+            </div>
+            <div className="itemDetails">
+              <div className="name">Book about fruits</div>
+              <div className="desc">Parthib DS</div>
+            </div>
+          </Link>
+          <Link href="/Store/Product" className="itemBox">
+            <div className="imgBox">
+              <Image
+                src="https://picsum.photos/800/1200.webp?trees"
+                alt=""
+                width={200}
+                height={300}
+              />
+            </div>
+            <div className="itemDetails">
+              <div className="name">Book about fruits</div>
+              <div className="desc">Parthib DS</div>
+            </div>
+          </Link>
         </div>
       </section>
     </section>
