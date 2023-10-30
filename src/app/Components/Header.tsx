@@ -28,7 +28,9 @@ const Header = () => {
 
   return (
     <div className="headerContainer">
-      <span className="headerTitle">Project Sage</span>
+      <span className="headerTitle">
+        <Link href="/Store">Project Sage</Link>
+      </span>
       <span className="headerOptions">
         <Link href="/Store">
           <StorefrontOutlinedIcon />

@@ -6,26 +6,11 @@ import { useRouter } from "next/navigation"; // Import useRouter from next/route
 import { Alert } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
-import KeyboardArrowRightRoundedIcon from "@mui/icons-material/KeyboardArrowRightRounded";
-import KeyboardArrowLeftRoundedIcon from "@mui/icons-material/KeyboardArrowLeftRounded";
+import BookCarousel from "../Components/BookCarousel";
+import BookScroll from "../Components/BookScroll";
+import KeyboardDoubleArrowUpIcon from "@mui/icons-material/KeyboardDoubleArrowUp";
 
 function Home() {
-  const containerRef = useRef<HTMLDivElement | null>(null);
-
-  const scrollToRight = () => {
-    if (containerRef.current) {
-      const currentScrollLeft = containerRef.current.scrollLeft;
-      containerRef.current.scrollTo(currentScrollLeft + 250, 0);
-    }
-  };
-
-  const scrollToLeft = () => {
-    if (containerRef.current) {
-      const currentScrollLeft = containerRef.current.scrollLeft;
-      containerRef.current.scrollTo(currentScrollLeft - 250, 0);
-    }
-  };
-
   return (
     <section className="mainStore">
       <section className="header">
@@ -36,113 +21,29 @@ function Home() {
 
       <section className="home" id="home">
         <div className="promo">
-          <h3>New Arrivals, Recommendations and Offers!</h3>
+          <h3>Welcome to the book store!</h3>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
             blanditiis suscipit voluptates. Cupiditate ipsa eum quod nesciunt
             animi nam labore earum dolor odit neque similique debitis laborum,
             rem, velit quibusdam.
           </p>
-          <button className="shopnowBtn">
-            <Link href="#arrivalSection">Shop Now</Link>
-          </button>
+          <div className="promoBtn">
+            Go to: <Link href="#arrivalSection">New Arrivals</Link>
+            <Link href="#popularSection">Popular</Link>
+            <Link href="#trendingSection">Trending</Link>
+            <Link href="#allSection">All Books</Link>
+          </div>
         </div>
       </section>
-      <section className="bookSection" id="arrivalSection">
-        <button className="scLeft" onClick={scrollToLeft}>
-          <KeyboardArrowLeftRoundedIcon />
-        </button>
-        <p>New Arrivals!</p>
-        <button className="scRight" onClick={scrollToRight}>
-          <KeyboardArrowRightRoundedIcon />
-        </button>
-        <div className="bookSectionSlider" ref={containerRef}>
-          <Link href="/Store/Product" className="itemBox">
-            <div className="imgBox">
-              <Image
-                src="https://picsum.photos/800/1200.webp?space"
-                alt=""
-                width={200}
-                height={300}
-              />
-            </div>
-            <div className="itemDetails">
-              <div className="name">Book about fruits</div>
-              <div className="desc">Parthib DS</div>
-            </div>
-          </Link>
-          <Link href="/Store/Product" className="itemBox">
-            <div className="imgBox">
-              <Image
-                src="https://picsum.photos/800/1200.webp?earth"
-                alt=""
-                width={200}
-                height={300}
-              />
-            </div>
-            <div className="itemDetails">
-              <div className="name">Book about fruits</div>
-              <div className="desc">Parthib DS</div>
-            </div>
-          </Link>
-          <Link href="/Store/Product" className="itemBox">
-            <div className="imgBox">
-              <Image
-                src="https://picsum.photos/800/1200.webp?technology"
-                alt=""
-                width={200}
-                height={300}
-              />
-            </div>
-            <div className="itemDetails">
-              <div className="name">Book about fruits</div>
-              <div className="desc">Parthib DS</div>
-            </div>
-          </Link>
-          <Link href="/Store/Product" className="itemBox">
-            <div className="imgBox">
-              <Image
-                src="https://picsum.photos/800/1200.webp?people"
-                alt=""
-                width={200}
-                height={300}
-              />
-            </div>
-            <div className="itemDetails">
-              <div className="name">Book about fruits</div>
-              <div className="desc">Parthib DS</div>
-            </div>
-          </Link>
-          <Link href="/Store/Product" className="itemBox">
-            <div className="imgBox">
-              <Image
-                src="https://picsum.photos/800/1200.webp?animals"
-                alt=""
-                width={200}
-                height={300}
-              />
-            </div>
-            <div className="itemDetails">
-              <div className="name">Book about fruits</div>
-              <div className="desc">Parthib DS</div>
-            </div>
-          </Link>
-          <Link href="/Store/Product" className="itemBox">
-            <div className="imgBox">
-              <Image
-                src="https://picsum.photos/800/1200.webp?trees"
-                alt=""
-                width={200}
-                height={300}
-              />
-            </div>
-            <div className="itemDetails">
-              <div className="name">Book about fruits</div>
-              <div className="desc">Parthib DS</div>
-            </div>
-          </Link>
-        </div>
-      </section>
+      <BookCarousel title="New Arrivals!" id="arrivalSection" />
+      <BookCarousel title="Popular Books" id="popularSection" />
+      <BookCarousel title="Trending Books" id="trendingSection" />
+      <BookScroll title="All Books" id="allSection" />
+      <Link href="#" className="backToTop">
+        <KeyboardDoubleArrowUpIcon />
+        Back To Top
+      </Link>
     </section>
   );
 }

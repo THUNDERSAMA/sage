@@ -27,13 +27,10 @@ body {
     rgba(0, 0, 0, 0.2)
   );
   color: white;
+  cursor: default;
   font-family: "Poppins", sans-serif;
 }
 
 body::-webkit-scrollbar {
   display: none;
-}
-
-p {
-  cursor: default;
 }

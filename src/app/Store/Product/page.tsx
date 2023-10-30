@@ -5,6 +5,7 @@ import React from "react";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import StarIcon from "@mui/icons-material/Star";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
+import BookScroll from "@/app/Components/BookScroll";
 
 const Home = () => {
   return (
@@ -74,10 +75,8 @@ const Home = () => {
           </span>
         </div>
       </section>
-      <hr />
-      <hr />
-      <section className="relatedBooks">
-        <h1>Related Books</h1>
+      <section className="mainStore">
+        <BookScroll title="Related Books" id="relatedSection" />
       </section>
     </div>
   );
