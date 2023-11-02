@@ -4,6 +4,8 @@ import "./css/header.css";
 import "./css/auth.css";
 import "./css/product.css";
 import "./css/store.css";
+import "./css/checkout.css";
+
 import type { Metadata } from "next";
 // import { Poppins } from "next/font/google";
 
